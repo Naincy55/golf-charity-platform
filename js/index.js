@@ -4,3 +4,7 @@ function scrollToSection(sectionId) {
     section.scrollIntoView({ behavior: 'smooth' });
   }
 }
+
+function goToSignup() {
+  window.location.href = "signup.html";
+}

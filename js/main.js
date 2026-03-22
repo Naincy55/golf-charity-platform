@@ -1,23 +1,5 @@
 // // js/main.js
 
-
-function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-}
-
-function goToSignup() {
-  window.location.href = "signup.html";
-}
-
-function goToUserLogin() {
-  window.location.href = "login.html"; // user login
-}
-
-function goToAdminLogin() {
-  window.location.href = "login.html"; // admin login
-}
-
-
 // Animate progress when visible
 window.addEventListener("scroll", () => {
   const progress = document.querySelector(".progress-fill");
