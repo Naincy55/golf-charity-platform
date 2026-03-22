@@ -6,84 +6,96 @@
 }
 
 body {
-  background: #f4f6f9;
-  height: 100vh;
-}
-
-.dashboard {
   display: flex;
   height: 100vh;
+  background: #0f172a;
+  color: #e2e8f0;
 }
 
 /* Sidebar */
 .sidebar {
-  width: 220px;
-  background: #1e293b;
-  color: white;
+  width: 240px;
+  background: #020617;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #1e293b;
 }
 
 .sidebar h2 {
-  margin-bottom: 25px;
+  text-align: center;
+  color: #22c55e;
+  margin-bottom: 30px;
 }
 
 .sidebar button {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
+  background: transparent;
   border: none;
-  background: #334155;
-  color: white;
+  color: #cbd5f5;
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 6px;
+  transition: 0.3s;
 }
 
 .sidebar button:hover {
-  background: #475569;
+  background: #22c55e;
+  color: black;
 }
 
-/* Main Content */
+/* Main */
 .main {
   flex: 1;
   padding: 25px;
 }
 
-.section {
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+/* Cards */
+.main > div {
+  background: #020617;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #1e293b;
+  margin-bottom: 20px;
 }
 
-.hidden {
-  display: none;
-}
-
+/* Inputs */
 input {
   padding: 10px;
-  margin: 10px 5px 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  margin: 8px 5px 10px 0;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
 }
 
+input:focus {
+  border-color: #22c55e;
+}
+
+/* Buttons */
 button {
-  padding: 10px 15px;
+  background: #22c55e;
+  color: black;
   border: none;
-  background: #2563eb;
-  color: white;
-  border-radius: 6px;
+  padding: 10px 15px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #1d4ed8;
+  background: #16a34a;
 }
 
-ul {
-  margin-top: 15px;
+/* List */
+ul li {
+  background: #0f172a;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
 }
 
-li {
-  padding: 8px;
-  border-bottom: 1px solid #eee;
+/* Hidden */
+.hidden {
+  display: none;
 }
