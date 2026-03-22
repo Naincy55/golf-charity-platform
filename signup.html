@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup - Golf Charity</title>
+  <link rel="stylesheet" href="css/signup.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LEFT SIDE -->
+  <div class="left">
+    <div class="branding">
+      <h1>⛳ Golf Charity</h1>
+      <p>Play with purpose. Give with heart.</p>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right">
+    <div class="form-box">
+      <h2>Create Account</h2>
+      <p class="subtext">Signup to get started</p>
+
+      <input type="text" id="name" placeholder="Full Name">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+
+    
+        <button onclick="signupUser()" href="signup.html?role=user" >Signup as User</button>
+        <button onclick="signupAdmin()" href="signup.html?role=admin" >signup as Admin</button>
+
+      <p class="bottom-text">
+        Already have an account? <a href="login.html">Login</a>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/supabaseClient.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>

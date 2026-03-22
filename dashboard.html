@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Golf Charity Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2>⛳ Golf Charity</h2>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Subscription Card -->
+  <div class="card">
+  <h3>💳 Subscription Plan</h3>
+  <h4 id="plan">Current Plan: Loading...</h4>
+  <div class="btn-group">
+    <button  class="primary" onclick="goToSubscription()">Monthly</button>
+<button  class="secondary" onclick="goToSubscription()">Yearly</button>
+  </div>
+</div>
+
+    <!-- Add Score Card -->
+    <div class="card">
+      <h3>🏌️ Add Your Golf Score</h3>
+      <div class="input-group">
+        <input type="number" id="score" placeholder="Enter score">
+        <button onclick="addScore()">Add</button>
+      </div>
+    </div>
+
+    
+
+    <!-- Scores Card -->
+    <div class="card">
+      <h3>📊 Your Scores</h3>
+      <ul id="scoresList" class="score-list"></ul>
+    </div>
+
+<div class="card charity-card">
+  <h3>❤️ Choose a Charity</h3>
+
+  <!-- Charity List -->
+  <div class="btn-group" id="charityList">
+    <button onclick="selectCharity('Education Fund')">Education Fund</button>
+    <button onclick="selectCharity('Health Care')">Health Care</button>
+    <button onclick="selectCharity('Animal Welfare')">Animal Welfare</button>
+  </div>
+
+  <!-- Donation Input -->
+  <div class="donation-box">
+    <label>Donation % (Min 10%)</label>
+    <input type="number" id="donation" placeholder="Enter %" min="10">
+  </div>
+<button onclick="saveCharity()" class="primary">
+  Save Preference
+</button>
+  <!-- Selected Output -->
+  <p id="selectedCharity">No charity selected</p>
+</div>
+
+
+
+<!-- Rewards Section -->
+<div class="card rewards-card">
+  <h3>🏆 Monthly Rewards</h3>
+
+  <p class="reward-text">
+    Participate in events and stand a chance to win exciting rewards every month!
+  </p>
+
+  <!-- Progress -->
+  <div class="reward-progress">
+    <p>Your Progress</p>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+    <span>3 / 5 scores submitted</span>
+  </div>
+
+  <!-- Rewards List -->
+  <ul class="reward-list">
+    <li>🎁 Golf Kit</li>
+    <li>🏌️ Free Tournament Entry</li>
+    <li>💰 Cashback Rewards</li>
+  </ul>
+
+  <button class="primary">View Leaderboard</button>
+</div>
+  </div>
+
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/auth.js"></script> 
+  <script src="js/dashboard.js"></script>
+
+</body>
+</html>

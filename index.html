@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golf Charity Platform</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <h2 class="logo">⛳ Golf Charity</h2>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#impact">Impact</a>
+      <a href="#how">How it Works</a>
+    </div>
+
+    <!-- NEW LOGIN DROPDOWN -->
+    <div class="login-menu">
+      <button class="btn btn-primary" >
+        
+          <a href="login.html">Login</a>
+         <!-- <a href="login.html">Login</a> -->
+      </button>
+      <!-- <div class="dropdown">
+       <a href="login.html?role=user">Login as User</a>
+       <a href="login.html?role=admin">Login as Admin</a> -->
+
+      <!-- <a href="signup.html?role=user">Signup as User</a>
+      <a href="signup.html?role=admin">Signup as Admin</a> -->
+      <!-- </div> -->
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Play Golf. Support Charity.</h1>
+      <p>Join golf events, submit scores, and win rewards while helping those in need.</p>
+
+      <button class="btn btn-primary" onclick="window.location.href='login.html'">Get Started</button>
+      <button class="btn btn-secondary" onclick="scrollToSection('about')">Learn More</button>
+    </div>
+  </section>
+
+  
+
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About Platform</h2>
+    <p>
+      The Golf Charity Platform connects players with charities through fun and competitive golf events. Every game contributes to a greater cause ❤️.
+
+Players can join or host events, compete with others, and track their performance while supporting meaningful initiatives. The platform ensures transparency in donations and makes it easy to contribute towards social impact.
+
+Whether you're a golf enthusiast or someone who wants to make a difference, this platform brings together sport and purpose in one place.
+      ❤️
+    </p>
+  </section>
+
+
+  <!-- EVENTS -->
+  <section id="events" class="section light">
+    <h2>Upcoming Events</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Charity Cup</h3>
+        <p>Bangalore | April 2026</p>
+        <button class="btn btn-primary"  onclick="goToSignup()">Join</button>
+      </div>
+
+      <div class="card">
+        <h3>Green Open</h3>
+        <p>Mumbai | May 2026</p>
+        <button class="btn btn-primary"  onclick="goToSignup()">Join</button>
+      </div>
+
+      <div class="card">
+        <h3>Hope League</h3>
+        <p>Delhi | June 2026</p>
+        <button class="btn btn-primary"  onclick="goToSignup()">Join</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- IMPACT -->
+ <section id="impact" class="section">
+  <h2>Our Impact</h2>
+
+  <div class="impact">
+
+    <div class="impact-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" alt="donation">
+      <h3>₹50L+</h3>
+      <p>Funds Raised</p>
+    </div>
+
+    <div class="impact-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="players">
+      <h3>10K+</h3>
+      <p>Players Joined</p>
+    </div>
+
+    <div class="impact-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1040/1040230.png" alt="charity">
+      <h3>25+</h3>
+      <p>Charity Partners</p>
+    </div>
+  </div>
+   <!-- ADD HERE 👇 -->
+  <div class="progress-box">
+    <p>₹50L raised out of ₹1 Crore goal</p>
+
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+
+    <span class="progress-text">50% Completed</span>
+  </div>
+</section>
+
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section light">
+  <h2>How It Works</h2>
+
+  <div class="cards">
+
+    <!-- SIGNUP -->
+    <a href="signup.html" class="card-link">
+      <div class="card">
+        <h3>1. Sign Up</h3>
+        <p>Create your account</p>
+      </div>
+    </a>
+
+    <!-- ADD SCORES -->
+    <a href="login.html?redirect=addScore" class="card-link">
+      <div class="card">
+        <h3>2. Add Scores</h3>
+        <p>Submit your golf scores</p>
+      </div>
+    </a>
+
+    <!-- REWARDS -->
+    <a href="login.html?redirect=rewards" class="card-link">
+      <div class="card">
+        <h3>3. Win Rewards</h3>
+        <p>Enter monthly draws</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Start Playing & Giving Today</h2>
+    <p>Be part of something bigger.</p>
+    <button class="btn btn-secondary" onclick="goToSignup()">Join Now</button>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Golf Charity Platform</p>
+  </footer>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

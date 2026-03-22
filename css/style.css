@@ -1,0 +1,402 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f5f7f6;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #2e7d32;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+/* underline hover effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #2e7d32;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #2e7d32;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #256628;
+}
+
+.btn-secondary {
+  background: white;
+  border: 2px solid #2e7d32;
+  color: #2e7d32;
+}
+
+.btn-secondary:hover {
+  background: #2e7d32;
+  color: white;
+}
+
+/* DROPDOWN LOGIN */
+.login-menu {
+  position: relative;
+   
+}
+
+.dropdown{
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  min-width: 160px;
+}
+.dropdown a {
+  display: block;
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dropdown a:hover {
+  background: #e8f5e9;
+}
+
+.login-menu:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  min-width: 160px;
+}
+
+.dropdown a {
+  display: block;
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dropdown a:hover {
+  background: #e8f5e9;
+}
+
+.login-menu:hover .dropdown {
+  display: block;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+              url('https://images.unsplash.com/photo-1599058917212-d750089bc07e');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  margin: 20px 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #2e7d32;
+}
+
+.light {
+  background: #e8f5e9;
+}
+
+
+
+
+/* Make anchor behave like card */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Cards container (you already have, but enhanced) */
+.cards {
+  display: flex;
+  gap: 25px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* CARD STYLE */
+.card {
+  background: white;
+  padding: 30px 20px;
+  width: 260px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Number styling (1,2,3) */
+.card h3 {
+  font-size: 1.3rem;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.card p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Hover effect */
+.card-link:hover .card {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(46,125,50,0.2);
+}
+
+/* Subtle top border animation */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: #2e7d32;
+  transition: 0.3s;
+}
+
+.card-link:hover .card::before {
+  width: 100%;
+}
+
+/* OPTIONAL: icon circle effect (future use) */
+.card::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: rgba(46,125,50,0.05);
+  border-radius: 50%;
+  top: -20px;
+  right: -20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* IMPACT SECTION ENHANCED */
+.impact {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.impact-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.impact-card img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.impact-card h3 {
+  color: #2e7d32;
+  font-size: 1.8rem;
+}
+
+.impact-card p {
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Hover effect */
+.impact-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* PROGRESS BOX */
+.progress-box {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.progress-box p {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* BAR */
+.progress-bar {
+  width: 80%;
+  height: 14px;
+  margin: auto;
+  background: #e0e0e0;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* FILL WITH GRADIENT + ANIMATION */
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #2e7d32, #66bb6a);
+  border-radius: 50px;
+  animation: loadProgress 2s ease forwards;
+}
+
+/* TEXT */
+.progress-text {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ANIMATION */
+@keyframes loadProgress {
+  from { width: 0; }
+  to { width: 50%; }
+}
+
+/* CTA */
+.cta {
+  background: #2e7d32;
+  color: white;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.cta h2 {
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #1b1b1b;
+  color: #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    margin: 10px 0;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .impact {
+    flex-direction: column;
+    align-items: center;
+  }
+}

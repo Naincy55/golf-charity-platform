@@ -1,0 +1,270 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body */
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  border: none;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #e60000;
+}
+
+/* Container */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Headings */
+.card h3 {
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2c5364;
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1b3a4b;
+}
+
+/* Special Buttons */
+.primary {
+  margin-top: 10px;
+  background: #28a745;
+}
+
+.primary:hover {
+  background: #1e7e34;
+}
+
+.secondary {
+  background: #007bff;
+}
+
+.secondary:hover {
+  background: #0056b3;
+}
+
+/* Input */
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Score List */
+.score-list {
+  list-style: none;
+}
+
+.score-list li {
+  padding: 8px;
+  margin-bottom: 5px;
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+
+.charity-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.charity-card h3 {
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-group button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #2f4f5f;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover */
+.btn-group button:hover {
+  background: #1f3a46;
+}
+
+/* Selected state */
+.btn-group button.active {
+  background: #22c55e;
+}
+
+/* Donation box */
+.donation-box {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.donation-box input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Selected text */
+#selectedCharity {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+/* REWARDS CARD */
+.rewards-card {
+  text-align: center;
+}
+
+.reward-text {
+  margin: 10px 0 20px;
+  color: #555;
+}
+
+/* PROGRESS */
+.reward-progress {
+  margin: 20px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-fill {
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, #2e7d32, #66bb6a);
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+/* REWARD LIST */
+.reward-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.reward-list li {
+  background: #f5f7f6;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.reward-list li:hover {
+  background: #e8f5e9;
+  transform: scale(1.02);
+}
+
+/* Button */
+.rewards-card button {
+  margin-top: 10px;
+}
+
+/* Moving shine effect */
+.progress-fill {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.4);
+  transform: skewX(-20deg);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  from { left: -100%; }
+  to { left: 150%; }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Subscription Plans</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <link rel="stylesheet" href="css/subscription.css">
+</head>
+
+<body>
+
+<h2>Choose Your Plan</h2>
+
+<div class="container">
+
+  <div class="plans">
+
+    <!-- Monthly -->
+    <div class="card">
+      <h3>Monthly Plan</h3>
+      <div class="price">₹199 <span>/month</span></div>
+
+      <ul class="features">
+        <li>✔ Access to dashboard</li>
+        <li>✔ Add scores</li>
+        <li>✔ Basic support</li>
+      </ul>
+
+      <button class="primary" onclick="setPlan('monthly')">
+        Subscribe Monthly
+      </button>
+    </div>
+
+    <!-- Yearly -->
+    <div class="card highlight">
+      <div class="badge">Best Value</div>
+
+      <h3>Yearly Plan</h3>
+      <div class="price">₹1999 <span>/year</span></div>
+
+      <ul class="features">
+        <li>✔ All Monthly Features</li>
+        <li>✔ Priority support</li>
+        <li>✔ Save ₹389</li>
+      </ul>
+
+      <button class="secondary" onclick="setPlan('yearly')">
+        Subscribe Yearly
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+ <script src="js/supabaseClient.js"></script>
+  <script src="js/auth.js"></script> 
+  <script src="js/subscription.js"></script>
+
+</body>
+</html>
