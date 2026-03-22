@@ -3,78 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="css/admin.css">
+
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      margin: 0;
+    }
+
+    .sidebar {
+      width: 200px;
+      background: #222;
+      color: white;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .sidebar button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border: none;
+      background: #444;
+      color: white;
+      cursor: pointer;
+    }
+
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input {
+      margin: 5px;
+      padding: 8px;
+    }
+
+    button {
+      padding: 8px;
+      margin-top: 5px;
+    }
+  </style>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
 
 <body>
 
-<div class="dashboard">
+<div class="sidebar">
+  <h2>Admin Panel</h2>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>Admin Panel</h2>
+  <button onclick="showSection('usersSection')">Users</button>
+  <button onclick="showSection('scoreSection')">Scores</button>
+  <button onclick="showSection('drawSection')">Draw</button>
+  <button onclick="showSection('charitySection')">Charity</button>
+  <button onclick="showSection('winnerSection')">Winners</button>
+</div>
 
-    <button onclick="showSection('usersSection')">View Users</button>
-    <button onclick="showSection('scoreSection')">Edit Scores</button>
-    <button onclick="showSection('drawSection')">Run Draw</button>
-    <button onclick="showSection('charitySection')">Add Charities</button>
-    <button onclick="showSection('winnerSection')">Verify Winners</button>
+<div class="main">
+
+  <!-- USERS -->
+  <div id="usersSection">
+    <h3>Users</h3>
+    <button onclick="loadUsers()">Refresh</button>
+    <ul id="usersList"></ul>
   </div>
 
+  <!-- SCORE -->
+  <div id="scoreSection" class="hidden">
+    <h3>Update Score</h3>
+    <input id="userId" placeholder="User ID">
+    <input id="newScore" type="number" placeholder="Score">
+    <button onclick="updateScore()">Update</button>
+  </div>
 
-  <!-- Main Content -->
-  <div class="main">
+  <!-- DRAW -->
+  <div id="drawSection" class="hidden">
+    <h3>Run Draw</h3>
+    <button onclick="runDraw()">Run</button>
+    <p id="winnerResult"></p>
+  </div>
 
-    <!-- USERS -->
-    <div id="usersSection" class="section">
-      <h3>All Registered Users</h3>
-      <button onclick="loadUsers()">Refresh Users</button>
-      <ul id="usersList"></ul>
-    </div>
+  <!-- CHARITY -->
+  <div id="charitySection" class="hidden">
+    <h3>Add Charity</h3>
+   <input type="text" id="users-charity" placeholder="Enter charity name">
+    <button onclick="addCharity()">Add</button>
 
+    <ul id="charityList"></ul>
+  </div>
 
-    <!-- EDIT SCORE -->
-    <div id="scoreSection" class="section hidden">
-      <h3>Edit User Score</h3>
-
-      <input type="text" id="userId" placeholder="Enter User ID">
-      <input type="number" id="newScore" placeholder="Enter New Score">
-
-      <button onclick="updateScore()">Update Score</button>
-    </div>
-
-
-    <!-- RUN DRAW -->
-    <div id="drawSection" class="section hidden">
-      <h3>Run Lucky Draw</h3>
-
-      <button onclick="runDraw()">Run Draw</button>
-
-      <p id="winnerResult"></p>
-    </div>
-
-
-    <!-- ADD CHARITY -->
-    <div id="charitySection" class="section hidden">
-      <h3>Add New Charity</h3>
-
-      <input type="text" id="charityName" placeholder="Charity Name">
-      <button onclick="addCharity()">Add Charity</button>
-
-      <h4>Charity List</h4>
-      <ul id="charityList"></ul>
-    </div>
-
-
-    <!-- VERIFY WINNERS -->
-    <div id="winnerSection" class="section hidden">
-      <h3>Verify Winner</h3>
-
-      <input type="text" id="winnerId" placeholder="Winner ID">
-      <button onclick="verifyWinner()">Verify Winner</button>
-    </div>
-
+  <!-- WINNER -->
+  <div id="winnerSection" class="hidden">
+    <h3>Verify Winner</h3>
+    <input id="winnerId" placeholder="Winner ID">
+    <button onclick="verifyWinner()">Verify</button>
   </div>
 
 </div>

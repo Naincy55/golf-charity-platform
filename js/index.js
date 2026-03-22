@@ -1,3 +1,6 @@
-function goToSignup() {
-  window.location.href = "signup.html";
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
 }

@@ -1,132 +1,171 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
+/* Body + animated gradient background */
+/* Body + classy green-inspired background */
 body {
   height: 100vh;
-  background: #f4f7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+
+  /* Elegant green gradient */
+  background: linear-gradient(135deg, #d9f0e1, #a8e6cf, #70d6a5, #38b48a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
 }
 
-/* Main Layout */
+/* Smooth gradient animation for subtle luxury effect */
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Keep container centered */
 .container {
   display: flex;
-  height: 100vh;
-}
-
-/* Left Panel */
-.left-panel {
-  flex: 1;
-  background: linear-gradient(135deg, #0f9d58, #34a853);
-  color: white;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  width: 100%;
 }
 
-.left-panel h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-.left-panel p {
-  font-size: 18px;
-  opacity: 0.9;
-}
-
-/* Right Panel */
-.right-panel {
-  flex: 1;
+/* Keep container centered */
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 /* Login Box */
 .login-box {
-  width: 320px;
-  padding: 30px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 380px;
+  padding: 45px 35px;
+  background: #ffffffee; /* slight transparency */
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
   text-align: center;
-
-   animation: fadeIn 0.8s ease-in-out;
+  position: relative;
+  animation: fadeInUp 0.8s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.login-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+}
+
+/* Title */
 .login-box h2 {
-  margin-bottom: 5px;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
 }
 
+/* Subtitle */
 .subtitle {
   font-size: 14px;
-  color: gray;
-  margin-bottom: 20px;
+  color: #6b7280;
+  margin-bottom: 25px;
 }
 
-/* Inputs */
-.login-box input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+/* Input group with icons */
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group .icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.input-group input {
+  width: 80%;
+  padding: 14px 15px 14px 45px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
   outline: none;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  font-size: 14px;
 }
 
-.login-box input:focus {
-  border-color: #34a853;
+.input-group input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 10px rgba(16,185,129,0.3);
 }
 
-/* Button */
+/* Buttons */
 .login-box button {
   width: 100%;
-  padding: 12px;
-  background: #0f9d58;
-  color: white;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 12px;
   border: none;
-  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  margin-top: 10px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-.login-box button:hover {
-  background: #0c7c45;
+.login-box button:first-of-type {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.login-box button:first-of-type:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(16,185,129,0.4);
+}
+
+.login-box button:last-of-type {
+  background: #f97316;
+  color: white;
+}
+
+.login-box button:last-of-type:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(249,115,22,0.4);
 }
 
 /* Signup text */
 .signup-text {
-  margin-top: 15px;
+  margin-top: 18px;
   font-size: 14px;
+  color: #6b7280;
 }
 
 .signup-text a {
-  color: #0f9d58;
+  color: #10b981;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+}
+
+.signup-text a:hover {
+  color: #059669;
 }
 
 /* Message */
 #message {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 14px;
-  color: red;
+  color: #ef4444;
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Animations */
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
 }
